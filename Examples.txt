@@ -1,0 +1,47 @@
+****Circles on Page****
+
+	<script type="text/paperscript" canvas="myCanvas">
+	for(var x = 0; x < 1000; x += 100){
+		for(var y = 0; y < 1000; y += 100){
+		new Path.Circle(new Point(x,y),10).fillColor = "red";
+		}
+	}
+</script>
+
+
+****Colors for specific keys and sound****
+
+	var sound1 = new Howl({
+	src: ['sounds/bubbles.mp3']
+});
+		var sound2 = new Howl({
+	src: ['sounds/clay.mp3']
+});
+
+if(event.key === "a"){
+	sound1.play();
+	newCircle.fillColor = "purple"
+	}
+	else if(event.key === "s"){
+	sound2.play();
+	newCircle.fillColor = "#16c3e0"
+	}
+	else{
+		newCircle.fillColor="orange";
+}
+
+
+
+*****Not allowing circles to store in array******
+    function onFrame(event){
+      for(var i = 0; i < circles.length; i++){
+        circles[i].scale(0.9);
+        circles[i].fillColor.hue += 1;
+        if(circles[i].area < 1){
+          circles[i].remove(); // remove the circle from the canvas
+          circles.splice(i, 1); // remove the circle from the array
+          i--; // decrement i so that the loop doesn't skip a circle because of .splice()
+          console.log(circles);
+        }
+      }
+    }
