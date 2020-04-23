@@ -3,7 +3,7 @@ A Game where you can press any key to create your own music!
 
 ## Description
 
-- Used HTML, CSS, [Paper.js](http://paperjs.org/)
+- Used HTML, CSS, [Paper.js](http://paperjs.org/), [Howler.js](https://howlerjs.com/)
 
 - Neuronal Synchrony
 
